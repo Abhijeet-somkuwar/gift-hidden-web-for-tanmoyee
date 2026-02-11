@@ -12,6 +12,26 @@ const GIFS = {
   step5: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXNzYjR3ZzRpNXpjNjgzZGNnNWlvNWhiYnZvYzFwMGVqc2d5ODBiaiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ytu2GUYbvhz7zShGwS/giphy.gif'
 };
 
+// Puzzle questions - CUSTOMIZE THESE!
+// Moved outside component to fix ESLint exhaustive-deps warning
+const puzzleQuestions = [
+  {
+    question: "Unscramble the word: V L O E",
+    answer: "LOVE",
+    hint: "4 letters, starts with L"
+  },
+  {
+    question: "What has a heart that doesn't beat?",
+    answer: "ARTICHOKE",
+    hint: "It's a vegetable!"
+  },
+  {
+    question: "Complete: Roses are red, violets are ___",
+    answer: "BLUE",
+    hint: "It's a color"
+  }
+];
+
 const ValentineProposal = () => {
   const [step, setStep] = useState(1);
   const [userName, setUserName] = useState('');
@@ -30,25 +50,6 @@ const ValentineProposal = () => {
   const [hintCountdown, setHintCountdown] = useState(null);
   const noBtnRef = useRef(null);
   const containerRef = useRef(null);
-
-  // Puzzle questions - CUSTOMIZE THESE!
-  const puzzleQuestions = [
-    {
-      question: "Unscramble the word: V L O E",
-      answer: "LOVE",
-      hint: "4 letters, starts with L"
-    },
-    {
-      question: "What has a heart that doesn't beat?",
-      answer: "ARTICHOKE",
-      hint: "It's a vegetable!"
-    },
-    {
-      question: "Complete: Roses are red, violets are ___",
-      answer: "BLUE",
-      hint: "It's a color"
-    }
-  ];
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
